@@ -283,6 +283,27 @@ Traveller preferences come from explicit declared sliders and priorities only. N
 
 </details>
 
+<details>
+<summary><b>Where a learned model would go — and where it must not</b></summary>
+
+<br/>
+
+Three insertion points already exist; nothing above them would have to change.
+
+| Boundary | What slots in |
+|---|---|
+| `ItineraryParser` | a document extraction model, giving genuine per-field confidence |
+| `data/index.ts` | real inventory and availability forecasting |
+| `RiskSignal` | delay prediction, weather models, confidence calibration |
+
+Ranked by value × feasibility: **parser confidence**, **delay prediction** (the biggest product gap — disruptions are currently detected, never forecast), and **connection-time estimation**, which would directly improve the strongest score in the system.
+
+**Where it must not go:** the cascade engine is a DAG traversal, and a model there would be strictly worse and would destroy *"why did this break?"*. The validator enforces facts — the Louvre being closed on Tuesday is not a prediction. The Pareto front is dominance maths. Two seats against a party of three is arithmetic.
+
+> A model belongs on the **inputs** — estimation, prediction, calibration — and on **ranking within the feasible set**. Never on feasibility or causality. The same rule that constrains the language model today, extended.
+
+</details>
+
 ---
 
 ## The interface
@@ -354,55 +375,6 @@ npx tsx server/src/scripts/debug.ts    # cascade table, feasibility
 An `ANTHROPIC_API_KEY` in the server environment switches the recovery assistant's intent extraction from the built-in rule reader to Claude. Entirely optional.
 
 `server/src/types.ts` and `mobile/src/types/domain.ts` are kept identical below their headers. If you change one, copy it across.
-
-</details>
-
----
-
-## Verification
-
-| | |
-|---|---|
-| **Typecheck** | 0 errors across both packages, 0 dead imports |
-| **Bundles** | Android 11.3 MB · iOS 10.9 MB · web — all clean |
-| **Runtime** | all 5 destinations render, 0 console errors, 0 exceptions |
-| **Journey regression** | healthy → cascade → deck → before/after → rebuilt trip |
-| **Responsive** | 0 horizontal overflow at 360 / 390 / 412 / 768 / 1024 / 1440 |
-| **Reduced motion** | full content in final state, nothing hidden, 0 exceptions |
-| **Touch targets** | 0 interactive targets under 44 px |
-| **Contrast** | 0 body-text pairs under 4.5:1 |
-
-Ten engine correctness bugs were found and fixed during the build — cascade over-propagation, hotel hand-off ambiguity, degenerate score normalisation, a padded plan deck, and a dangling-edge 500 after a plan dropped a booking among them.
-
----
-
-## Honesty
-
-Stated in the product, not just here:
-
-- **All inventory is seeded demo data.** Prices, seat counts and availability are fabricated to make a specific scenario legible, and the UI says so wherever a price appears. Nothing claims to be live market data.
-- **The preference weights are a stated trade-off** from your own sliders, not a measured model of human utility.
-- **The five resilience components are weighted by product judgement**, not by a validated model — and they are shown broken down so you can disagree with the weighting and still read the parts.
-- **There is no machine learning in the system today.** The clear places for it are named below, and the interfaces already exist.
-
-<details>
-<summary><b>Where ML would go — and where it must not</b></summary>
-
-<br/>
-
-Three insertion points already exist; nothing above them would have to change.
-
-| Boundary | What slots in |
-|---|---|
-| `ItineraryParser` | a document extraction model, giving genuine per-field confidence |
-| `data/index.ts` | real inventory and availability forecasting |
-| `RiskSignal` | delay prediction, weather models, confidence calibration |
-
-Ranked by value × feasibility: **parser confidence** (today it is a fixed per-kind rule, not a measurement), **delay prediction** (the biggest product gap — disruptions are currently detected, never forecast), and **connection-time estimation** (which would directly improve the strongest score in the system).
-
-**Where it must not go:** the cascade engine is a DAG traversal, and ML there would be strictly worse and would destroy *"why did this break?"*. The validator enforces facts — the Louvre being closed on Tuesday is not a prediction. The Pareto front is dominance maths. Two seats against a party of three is arithmetic.
-
-> ML belongs on the **inputs** — estimation, prediction, calibration — and on **ranking within the feasible set**. Never on feasibility or causality. The same rule that constrains the language model today, extended.
 
 </details>
 
