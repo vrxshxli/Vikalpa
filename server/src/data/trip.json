@@ -1,0 +1,462 @@
+{
+  "id": "trip-demo-001",
+  "title": "Mumbai → Dubai → Paris",
+  "originKey": "MUMBAI",
+  "destinationKey": "PARIS",
+  "waypointKeys": ["DXB_MARINA"],
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-05",
+  "currency": "INR",
+  "travellers": [
+    {
+      "id": "trv-1",
+      "name": "Aarav",
+      "interests": ["CULTURE", "FOOD", "COMFORT"],
+      "accessibilityNeeds": [],
+      "avatarTone": "#2F5D50"
+    },
+    {
+      "id": "trv-2",
+      "name": "Meera",
+      "interests": ["ADVENTURE", "SAFETY"],
+      "accessibilityNeeds": [],
+      "avatarTone": "#B4643C"
+    },
+    {
+      "id": "trv-3",
+      "name": "Dev",
+      "interests": ["RELAXATION", "BUDGET", "ACCESSIBILITY"],
+      "accessibilityNeeds": ["Step-free access", "Extra transfer time"],
+      "avatarTone": "#6B5B95"
+    }
+  ],
+  "preferences": {
+    "budget": 45,
+    "time": 55,
+    "experience": 85,
+    "comfort": 60,
+    "safety": 75,
+    "pace": "BALANCED",
+    "summary": "Experience-first. Moderate budget. Avoid late nights."
+  },
+  "safety": {
+    "avoidLateNightArrival": true,
+    "preferVerifiedTransfers": true,
+    "avoidIsolatedLocations": false,
+    "maxTravelHoursPerDay": 9,
+    "keepGroupTogether": true,
+    "preferAccessibleTransport": true,
+    "preferNearbyEmergencyFacilities": false
+  },
+  "group": {
+    "keepGroupTogether": true,
+    "maxTravelHoursPerDay": 9,
+    "avoidLateNightTravel": true,
+    "priorityActivityIds": ["n-a1", "n-a3"]
+  },
+  "nodes": [
+    {
+      "id": "n-f1",
+      "kind": "FLIGHT",
+      "title": "Mumbai → Dubai",
+      "subtitle": "Air India · AI182",
+      "provider": "Air India",
+      "ref": "AI182",
+      "start": "2026-06-01T08:15:00+05:30",
+      "end": "2026-06-01T09:45:00+04:00",
+      "fromKey": "BOM",
+      "toKey": "DXB",
+      "cost": 18400,
+      "refundable": false,
+      "refundPercent": 0,
+      "priority": "FIXED",
+      "day": 1,
+      "flexibility": { "canMove": false, "slackMinutes": 0 },
+      "notes": "Saver fare — changes not permitted on the original ticket."
+    },
+    {
+      "id": "n-t1",
+      "kind": "TRANSFER",
+      "title": "Airport transfer",
+      "subtitle": "DXB → Dubai Marina",
+      "provider": "Careem Private",
+      "ref": "CRM-88214",
+      "start": "2026-06-01T10:45:00+04:00",
+      "end": "2026-06-01T11:30:00+04:00",
+      "fromKey": "DXB",
+      "toKey": "DXB_MARINA",
+      "cost": 1200,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "IMPORTANT",
+      "day": 1,
+      "verifiedOperator": true,
+      "flexibility": { "canMove": true, "slackMinutes": 30 }
+    },
+    {
+      "id": "n-h1",
+      "kind": "HOTEL",
+      "title": "Marina Bay Suites",
+      "subtitle": "1 night · Dubai Marina",
+      "provider": "Marina Bay Suites",
+      "ref": "MBS-4471",
+      "start": "2026-06-01T14:00:00+04:00",
+      "end": "2026-06-02T12:00:00+04:00",
+      "locationKey": "DXB_MARINA",
+      "cost": 11800,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "IMPORTANT",
+      "day": 1,
+      "flexibility": { "canMove": true, "slackMinutes": 240 },
+      "notes": "Free cancellation until 48h before check-in."
+    },
+    {
+      "id": "n-a1",
+      "kind": "ACTIVITY",
+      "title": "Sunset Dhow Cruise",
+      "subtitle": "Dubai Creek Harbour",
+      "provider": "Creek Heritage Cruises",
+      "ref": "CHC-2210",
+      "start": "2026-06-01T17:30:00+04:00",
+      "end": "2026-06-01T20:00:00+04:00",
+      "locationKey": "DXB_CREEK",
+      "cost": 4500,
+      "refundable": false,
+      "refundPercent": 0,
+      "priority": "MUST_DO",
+      "day": 1,
+      "weatherSensitive": true,
+      "openingHours": { "open": "16:00", "close": "21:30", "closedDays": [] },
+      "flexibility": {
+        "canMove": true,
+        "slackMinutes": 0,
+        "alternateSlots": [
+          "2026-06-01T17:30:00+04:00",
+          "2026-06-02T17:30:00+04:00",
+          "2026-06-03T17:30:00+04:00"
+        ]
+      }
+    },
+    {
+      "id": "n-a2",
+      "kind": "ACTIVITY",
+      "title": "Dubai City Tour",
+      "subtitle": "Old Dubai + Downtown",
+      "provider": "Big Bus Dubai",
+      "ref": "BBD-7712",
+      "start": "2026-06-02T09:00:00+04:00",
+      "end": "2026-06-02T13:00:00+04:00",
+      "locationKey": "DXB_DOWNTOWN",
+      "cost": 3400,
+      "refundable": true,
+      "refundPercent": 80,
+      "priority": "IMPORTANT",
+      "day": 2,
+      "weatherSensitive": true,
+      "openingHours": { "open": "08:00", "close": "19:00", "closedDays": [] },
+      "flexibility": {
+        "canMove": true,
+        "slackMinutes": 60,
+        "alternateSlots": [
+          "2026-06-02T09:00:00+04:00",
+          "2026-06-02T14:00:00+04:00",
+          "2026-06-03T09:00:00+04:00"
+        ]
+      }
+    },
+    {
+      "id": "n-f2",
+      "kind": "FLIGHT",
+      "title": "Dubai → Paris",
+      "subtitle": "Emirates · EK073",
+      "provider": "Emirates",
+      "ref": "EK073",
+      "start": "2026-06-02T16:35:00+04:00",
+      "end": "2026-06-02T21:20:00+02:00",
+      "fromKey": "DXB",
+      "toKey": "CDG",
+      "cost": 31200,
+      "refundable": true,
+      "refundPercent": 60,
+      "priority": "FIXED",
+      "day": 2,
+      "flexibility": { "canMove": true, "slackMinutes": 0 }
+    },
+    {
+      "id": "n-t2",
+      "kind": "TRANSFER",
+      "title": "Airport transfer",
+      "subtitle": "CDG → Le Marais",
+      "provider": "G7 Paris",
+      "ref": "G7-33901",
+      "start": "2026-06-02T22:15:00+02:00",
+      "end": "2026-06-02T23:15:00+02:00",
+      "fromKey": "CDG",
+      "toKey": "PAR_MARAIS",
+      "cost": 2600,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "IMPORTANT",
+      "day": 2,
+      "verifiedOperator": true,
+      "flexibility": { "canMove": true, "slackMinutes": 30 }
+    },
+    {
+      "id": "n-h2",
+      "kind": "HOTEL",
+      "title": "Le Marais Boutique",
+      "subtitle": "3 nights · 4th arrondissement",
+      "provider": "Le Marais Boutique",
+      "ref": "LMB-9083",
+      "start": "2026-06-02T23:30:00+02:00",
+      "end": "2026-06-05T11:00:00+02:00",
+      "locationKey": "PAR_MARAIS",
+      "cost": 29400,
+      "refundable": false,
+      "refundPercent": 0,
+      "priority": "IMPORTANT",
+      "day": 2,
+      "flexibility": { "canMove": true, "slackMinutes": 180 },
+      "notes": "Non-refundable rate. Reception staffed 24h."
+    },
+    {
+      "id": "n-a3",
+      "kind": "ACTIVITY",
+      "title": "Louvre Guided Tour",
+      "subtitle": "Skip-the-line · 3h",
+      "provider": "Paris Museum Pass",
+      "ref": "PMP-5518",
+      "start": "2026-06-03T10:00:00+02:00",
+      "end": "2026-06-03T13:00:00+02:00",
+      "locationKey": "PAR_LOUVRE",
+      "cost": 3900,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "MUST_DO",
+      "day": 3,
+      "openingHours": { "open": "09:00", "close": "18:00", "closedDays": [2] },
+      "flexibility": {
+        "canMove": true,
+        "slackMinutes": 60,
+        "alternateSlots": [
+          "2026-06-03T10:00:00+02:00",
+          "2026-06-03T14:00:00+02:00",
+          "2026-06-04T10:00:00+02:00",
+          "2026-06-04T14:00:00+02:00"
+        ]
+      },
+      "notes": "Closed on Tuesdays."
+    },
+    {
+      "id": "n-a4",
+      "kind": "ACTIVITY",
+      "title": "Montmartre Food Walk",
+      "subtitle": "Small group · 2.5h",
+      "provider": "Paris by Mouth",
+      "ref": "PBM-1204",
+      "start": "2026-06-04T09:30:00+02:00",
+      "end": "2026-06-04T12:00:00+02:00",
+      "locationKey": "PAR_MONTMARTRE",
+      "cost": 2100,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "OPTIONAL",
+      "day": 4,
+      "openingHours": { "open": "08:00", "close": "15:00", "closedDays": [1] },
+      "flexibility": {
+        "canMove": true,
+        "slackMinutes": 90,
+        "alternateSlots": [
+          "2026-06-04T09:30:00+02:00",
+          "2026-06-05T08:00:00+02:00"
+        ]
+      }
+    },
+    {
+      "id": "n-a5",
+      "kind": "ACTIVITY",
+      "title": "Eiffel Summit & Seine Walk",
+      "subtitle": "Timed entry · 3h",
+      "provider": "Tour Eiffel",
+      "ref": "TE-6620",
+      "start": "2026-06-04T16:00:00+02:00",
+      "end": "2026-06-04T19:00:00+02:00",
+      "locationKey": "PAR_EIFFEL",
+      "cost": 4200,
+      "refundable": true,
+      "refundPercent": 50,
+      "priority": "IMPORTANT",
+      "day": 4,
+      "weatherSensitive": true,
+      "openingHours": { "open": "09:30", "close": "23:00", "closedDays": [] },
+      "flexibility": {
+        "canMove": true,
+        "slackMinutes": 90,
+        "alternateSlots": [
+          "2026-06-03T16:00:00+02:00",
+          "2026-06-04T16:00:00+02:00"
+        ]
+      }
+    },
+    {
+      "id": "n-t3",
+      "kind": "TRANSFER",
+      "title": "Airport transfer",
+      "subtitle": "Le Marais → CDG",
+      "provider": "G7 Paris",
+      "ref": "G7-41120",
+      "start": "2026-06-05T11:30:00+02:00",
+      "end": "2026-06-05T12:40:00+02:00",
+      "fromKey": "PAR_MARAIS",
+      "toKey": "CDG",
+      "cost": 2600,
+      "refundable": true,
+      "refundPercent": 100,
+      "priority": "IMPORTANT",
+      "day": 5,
+      "verifiedOperator": true,
+      "flexibility": { "canMove": true, "slackMinutes": 45 }
+    },
+    {
+      "id": "n-f3",
+      "kind": "FLIGHT",
+      "title": "Paris → Mumbai",
+      "subtitle": "Air India · AI144",
+      "provider": "Air India",
+      "ref": "AI144",
+      "start": "2026-06-05T14:20:00+02:00",
+      "end": "2026-06-06T01:50:00+05:30",
+      "fromKey": "CDG",
+      "toKey": "BOM",
+      "cost": 34500,
+      "refundable": true,
+      "refundPercent": 40,
+      "priority": "FIXED",
+      "day": 5,
+      "flexibility": { "canMove": false, "slackMinutes": 0 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-1",
+      "from": "n-f1",
+      "to": "n-t1",
+      "type": "REQUIRES",
+      "minGapMinutes": 60,
+      "label": "Transfer waits for AI182 to land and clear immigration"
+    },
+    {
+      "id": "e-2",
+      "from": "n-t1",
+      "to": "n-h1",
+      "type": "REQUIRES",
+      "minGapMinutes": 0,
+      "label": "Check-in happens when the transfer drops you at the hotel"
+    },
+    {
+      "id": "e-3",
+      "from": "n-h1",
+      "to": "n-a1",
+      "type": "ENABLES",
+      "minGapMinutes": 45,
+      "label": "Cruise pickup is from the hotel lobby"
+    },
+    {
+      "id": "e-4",
+      "from": "n-a1",
+      "to": "n-a2",
+      "type": "SEQUENCE",
+      "minGapMinutes": 0,
+      "label": "City tour follows the cruise the next morning"
+    },
+    {
+      "id": "e-5",
+      "from": "n-h1",
+      "to": "n-a2",
+      "type": "ENABLES",
+      "minGapMinutes": 45,
+      "label": "You start the tour from Dubai Marina"
+    },
+    {
+      "id": "e-6",
+      "from": "n-a2",
+      "to": "n-f2",
+      "type": "REQUIRES",
+      "minGapMinutes": 180,
+      "label": "3h between the tour ending and EK073 departing"
+    },
+    {
+      "id": "e-7",
+      "from": "n-f2",
+      "to": "n-t2",
+      "type": "REQUIRES",
+      "minGapMinutes": 55,
+      "label": "Paris transfer meets your arrival at CDG"
+    },
+    {
+      "id": "e-8",
+      "from": "n-t2",
+      "to": "n-h2",
+      "type": "REQUIRES",
+      "minGapMinutes": 0,
+      "label": "Le Marais check-in follows the transfer"
+    },
+    {
+      "id": "e-9",
+      "from": "n-h2",
+      "to": "n-a3",
+      "type": "ENABLES",
+      "minGapMinutes": 45,
+      "label": "You walk to the Louvre from the hotel"
+    },
+    {
+      "id": "e-10",
+      "from": "n-a3",
+      "to": "n-a5",
+      "type": "SEQUENCE",
+      "minGapMinutes": 0,
+      "label": "Eiffel entry is booked after the Louvre"
+    },
+    {
+      "id": "e-11",
+      "from": "n-h2",
+      "to": "n-a4",
+      "type": "ENABLES",
+      "minGapMinutes": 45,
+      "label": "Montmartre walk starts from central Paris"
+    },
+    {
+      "id": "e-12",
+      "from": "n-a4",
+      "to": "n-a5",
+      "type": "SAME_DAY",
+      "minGapMinutes": 120,
+      "label": "Both Paris experiences share a day"
+    },
+    {
+      "id": "e-13",
+      "from": "n-a5",
+      "to": "n-t3",
+      "type": "SEQUENCE",
+      "minGapMinutes": 0,
+      "label": "Departure transfer is your last movement"
+    },
+    {
+      "id": "e-14",
+      "from": "n-h2",
+      "to": "n-t3",
+      "type": "REQUIRES",
+      "minGapMinutes": 30,
+      "label": "Transfer collects you after checkout"
+    },
+    {
+      "id": "e-15",
+      "from": "n-t3",
+      "to": "n-f3",
+      "type": "REQUIRES",
+      "minGapMinutes": 100,
+      "label": "Bag drop and security before AI144"
+    }
+  ]
+}

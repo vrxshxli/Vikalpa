@@ -1,0 +1,62 @@
+[
+  {
+    "city": "Dubai",
+    "month": "June",
+    "weather": "42–46°C, humid. Occasional shamal winds in the evening.",
+    "floodExposure": "LOW",
+    "transportDisruption": "LOW",
+    "activityAvailability": "Outdoor tours run early morning or after sunset only. Desert and water activities operate normally.",
+    "crowdLevel": "LOW",
+    "tripImpact": "Both of your Dubai experiences are outdoor and weather-sensitive. Your Sunset Dhow Cruise sits inside the evening wind window, and your City Tour is an open-top bus in mid-40s heat.",
+    "recommendations": [
+      "Keep the cruise as an evening slot rather than moving it earlier",
+      "Prefer the 09:00 City Tour slot over 14:00",
+      "Carry the operator's weather-cancellation policy — the cruise is non-refundable"
+    ]
+  },
+  {
+    "city": "Paris",
+    "month": "June",
+    "weather": "18–24°C, changeable. Short showers most weeks.",
+    "floodExposure": "LOW",
+    "transportDisruption": "MEDIUM",
+    "activityAvailability": "Everything open. Museum queues build sharply after 11:00.",
+    "crowdLevel": "HIGH",
+    "tripImpact": "Your Louvre tour is on a Wednesday, which is the museum's busiest late-opening day. Your Eiffel summit entry can close in high wind. Industrial action is the main transport risk on your two airport transfers.",
+    "recommendations": [
+      "Hold the 10:00 Louvre slot rather than the afternoon one",
+      "Keep a refundable backup for the Eiffel summit",
+      "Leave 30 extra minutes for the departure transfer on 5 June"
+    ]
+  },
+  {
+    "city": "Mumbai",
+    "month": "June",
+    "weather": "Monsoon onset. 28–31°C with heavy intermittent rain.",
+    "floodExposure": "HIGH",
+    "transportDisruption": "HIGH",
+    "activityAvailability": "Coastal and outdoor activity availability drops sharply.",
+    "crowdLevel": "MEDIUM",
+    "tripImpact": "Your outbound flight leaves at the start of the monsoon window. Waterlogging on the Western Express Highway routinely adds 45–60 minutes to airport journeys, and BOM issues ground holds in heavy cells.",
+    "recommendations": [
+      "Leave for the airport 60 minutes earlier than usual",
+      "Your AI182 fare is non-refundable — consider a flexible fare next time",
+      "Add a buffer day before any onward international connection"
+    ]
+  },
+  {
+    "city": "Goa",
+    "month": "July",
+    "weather": "Peak monsoon. 300–400 mm rainfall, 25–29°C.",
+    "floodExposure": "HIGH",
+    "transportDisruption": "HIGH",
+    "activityAvailability": "Beach shacks closed, water sports suspended, ferries intermittent.",
+    "crowdLevel": "LOW",
+    "tripImpact": "Not part of your current itinerary — shown as a reference destination profile.",
+    "recommendations": [
+      "Add a buffer day around any coastal transfer",
+      "Move outdoor activities to the first half of the day",
+      "Prefer refundable bookings throughout"
+    ]
+  }
+]

@@ -1,0 +1,155 @@
+{
+  "BOM": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj Intl",
+    "city": "Mumbai",
+    "country": "India",
+    "lat": 19.0896,
+    "lon": 72.8656,
+    "tzOffset": 330
+  },
+  "MUMBAI": {
+    "name": "Mumbai",
+    "city": "Mumbai",
+    "country": "India",
+    "lat": 19.076,
+    "lon": 72.8777,
+    "tzOffset": 330
+  },
+  "DXB": {
+    "code": "DXB",
+    "name": "Dubai International",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "lat": 25.2532,
+    "lon": 55.3657,
+    "tzOffset": 240
+  },
+  "DXB_MARINA": {
+    "name": "Dubai Marina",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "lat": 25.0805,
+    "lon": 55.1403,
+    "tzOffset": 240
+  },
+  "DXB_CREEK": {
+    "name": "Dubai Creek Harbour",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "lat": 25.1972,
+    "lon": 55.3506,
+    "tzOffset": 240
+  },
+  "DXB_DOWNTOWN": {
+    "name": "Downtown Dubai",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "lat": 25.1972,
+    "lon": 55.2744,
+    "tzOffset": 240
+  },
+  "CDG": {
+    "code": "CDG",
+    "name": "Paris Charles de Gaulle",
+    "city": "Paris",
+    "country": "France",
+    "lat": 49.0097,
+    "lon": 2.5479,
+    "tzOffset": 120
+  },
+  "PAR_MARAIS": {
+    "name": "Le Marais",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8575,
+    "lon": 2.3622,
+    "tzOffset": 120
+  },
+  "PAR_LOUVRE": {
+    "name": "Musée du Louvre",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8606,
+    "lon": 2.3376,
+    "tzOffset": 120
+  },
+  "PAR_MONTMARTRE": {
+    "name": "Montmartre",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8867,
+    "lon": 2.3431,
+    "tzOffset": 120
+  },
+  "PAR_EIFFEL": {
+    "name": "Champ de Mars",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8584,
+    "lon": 2.2945,
+    "tzOffset": 120
+  },
+  "PARIS": {
+    "name": "Paris",
+    "city": "Paris",
+    "country": "France",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "tzOffset": 120
+  },
+  "LHR": {
+    "code": "LHR",
+    "name": "London Heathrow",
+    "city": "London",
+    "country": "United Kingdom",
+    "lat": 51.47,
+    "lon": -0.4543,
+    "tzOffset": 60
+  },
+  "IST": {
+    "code": "IST",
+    "name": "Istanbul Airport",
+    "city": "Istanbul",
+    "country": "Türkiye",
+    "lat": 41.2753,
+    "lon": 28.7519,
+    "tzOffset": 180
+  },
+  "SIN": {
+    "code": "SIN",
+    "name": "Singapore Changi",
+    "city": "Singapore",
+    "country": "Singapore",
+    "lat": 1.3644,
+    "lon": 103.9915,
+    "tzOffset": 480
+  },
+  "GOA": {
+    "code": "GOI",
+    "name": "Manohar International",
+    "city": "Goa",
+    "country": "India",
+    "lat": 15.7431,
+    "lon": 73.8631,
+    "tzOffset": 330
+  },
+  "BKK": {
+    "code": "BKK",
+    "name": "Suvarnabhumi",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.69,
+    "lon": 100.7501,
+    "tzOffset": 420
+  },
+  "JFK": {
+    "code": "JFK",
+    "name": "John F. Kennedy Intl",
+    "city": "New York",
+    "country": "United States",
+    "lat": 40.6413,
+    "lon": -73.7781,
+    "tzOffset": -240
+  }
+}

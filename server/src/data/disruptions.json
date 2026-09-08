@@ -1,0 +1,134 @@
+{
+  "_note": "Seeded disruption catalogue. The live monitor replays `feed`; the what-if simulator and manual input reuse the same shapes.",
+  "feed": [
+    {
+      "id": "dis-main",
+      "nodeId": "n-f1",
+      "type": "FLIGHT_DELAYED",
+      "delayMinutes": 1440,
+      "headline": "AI182 delayed by 24 hours",
+      "detail": "Air India has rescheduled AI182 Mumbai → Dubai to depart 08:15 on 2 June following an extended aircraft-on-ground event at Delhi.",
+      "source": "LIVE_MONITOR",
+      "detectedAt": "2026-06-01T09:42:00+05:30"
+    }
+  ],
+  "catalogue": [
+    {
+      "id": "dis-f1-2h",
+      "nodeId": "n-f1",
+      "type": "FLIGHT_DELAYED",
+      "delayMinutes": 120,
+      "headline": "Flight delayed 2 hours",
+      "detail": "AI182 pushes to 10:15, landing in Dubai at 11:45.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T09:42:00+05:30"
+    },
+    {
+      "id": "dis-f1-6h",
+      "nodeId": "n-f1",
+      "type": "FLIGHT_DELAYED",
+      "delayMinutes": 360,
+      "headline": "Flight delayed 6 hours",
+      "detail": "AI182 pushes to 14:15, landing in Dubai at 15:45.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T09:42:00+05:30"
+    },
+    {
+      "id": "dis-f1-24h",
+      "nodeId": "n-f1",
+      "type": "FLIGHT_DELAYED",
+      "delayMinutes": 1440,
+      "headline": "Flight delayed 24 hours",
+      "detail": "AI182 moves to the following morning, landing in Dubai at 09:45 on 2 June.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T09:42:00+05:30"
+    },
+    {
+      "id": "dis-f1-cancel",
+      "nodeId": "n-f1",
+      "type": "FLIGHT_CANCELLED",
+      "delayMinutes": 0,
+      "headline": "Flight cancelled",
+      "detail": "AI182 is cancelled outright. You need a new way into Dubai.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T09:42:00+05:30"
+    },
+    {
+      "id": "dis-h1-cancel",
+      "nodeId": "n-h1",
+      "type": "HOTEL_CANCELLED",
+      "delayMinutes": 0,
+      "headline": "Dubai hotel cancelled",
+      "detail": "Marina Bay Suites has released your room due to an overbooking.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T09:42:00+04:00"
+    },
+    {
+      "id": "dis-a1-weather",
+      "nodeId": "n-a1",
+      "type": "WEATHER",
+      "delayMinutes": 0,
+      "headline": "Heavy rain and wind at the Creek",
+      "detail": "The dhow operator has suspended sailings for the evening.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-01T14:00:00+04:00"
+    },
+    {
+      "id": "dis-t2-fail",
+      "nodeId": "n-t2",
+      "type": "TRANSFER_FAILED",
+      "delayMinutes": 0,
+      "headline": "Paris transfer failed",
+      "detail": "Your G7 car did not arrive at CDG arrivals.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-02T22:20:00+02:00"
+    },
+    {
+      "id": "dis-f2-5h",
+      "nodeId": "n-f2",
+      "type": "FLIGHT_DELAYED",
+      "delayMinutes": 300,
+      "headline": "Missed connection to Paris",
+      "detail": "EK073 slips five hours, arriving into CDG after 02:00.",
+      "source": "SIMULATION",
+      "detectedAt": "2026-06-02T14:00:00+04:00"
+    }
+  ],
+  "quickActions": [
+    {
+      "id": "qa-transport",
+      "label": "Transport changed",
+      "prompt": "Which booking changed?",
+      "kinds": ["FLIGHT", "TRAIN", "BUS"],
+      "types": ["FLIGHT_DELAYED", "FLIGHT_CANCELLED", "TRAIN_MISSED", "SCHEDULE_CHANGED"]
+    },
+    {
+      "id": "qa-hotel",
+      "label": "Hotel cancelled",
+      "prompt": "Which stay was cancelled?",
+      "kinds": ["HOTEL"],
+      "types": ["HOTEL_CANCELLED"]
+    },
+    {
+      "id": "qa-transfer",
+      "label": "Transfer failed",
+      "prompt": "Which transfer let you down?",
+      "kinds": ["TRANSFER"],
+      "types": ["TRANSFER_FAILED"]
+    },
+    {
+      "id": "qa-weather",
+      "label": "Weather problem",
+      "prompt": "What is weather affecting?",
+      "kinds": ["ACTIVITY", "FLIGHT", "TRANSFER"],
+      "types": ["WEATHER", "ACTIVITY_UNAVAILABLE"]
+    },
+    {
+      "id": "qa-plans",
+      "label": "I need to change my plans",
+      "prompt": "What would you like to move?",
+      "kinds": ["ACTIVITY", "HOTEL", "FLIGHT"],
+      "types": ["SCHEDULE_CHANGED", "ACTIVITY_UNAVAILABLE"]
+    }
+  ]
+}
